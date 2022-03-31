@@ -4,11 +4,7 @@ That's a to-do list tool builtin for studies purposes.
 
 ----
 
-<br>
-
 > requires Node >=14
-
-<br>
 
 ## Backend
 
@@ -17,8 +13,6 @@ That's a to-do list tool builtin for studies purposes.
 - ⚙️ [NodeJs](https://nodejs.org/en/docs/)
 - ⚡️ [Expess](https://expressjs.com/pt-br/4x/api.html)
 - 💾 [SQLite3](https://www.sqlite.org/)
-
-<br>
 
 ### Start server
 
@@ -51,8 +45,6 @@ That's a to-do list tool builtin for studies purposes.
 - 🦾 TypeScript
 - 🖨 Static-site generation (SSG) via [vite-ssg](https://github.com/antfu/vite-ssg)
 - 🦔 Critical CSS via [critters](https://github.com/GoogleChromeLabs/critters)
-
-<br>
 
 ### Usage
 
