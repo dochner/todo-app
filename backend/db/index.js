@@ -24,7 +24,7 @@ database.serialize(() => {
     }
   });
 
-  const updatedAtTrigger = `CREATE TRIGGER tg_notes_updated_at
+  const updatedAtTrigger = `CREATE TRIGGER IF NOT EXISTS tg_notes_updated_at
     AFTER UPDATE
     ON notes FOR EACH ROW
     BEGIN

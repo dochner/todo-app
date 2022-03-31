@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
   res.json('Wazzzzzzuuuuuuuuuuuuuuuuuuuuuuuup!!!!');
 });
 
-app.get('/notes', (req, res) => {
+app.get('/api/notes', (req, res) => {
   database.all('SELECT * FROM notes', (err, rows) => {
     if (err) {
       res.send(err.message);
@@ -31,7 +31,7 @@ app.get('/notes', (req, res) => {
   });
 });
 
-app.post('/notes', (req, res) => {
+app.post('/api/notes', (req, res) => {
   const { title, content } = req.body;
   const sql = 'INSERT INTO notes (title, content) VALUES (?, ?)';
 
@@ -50,7 +50,7 @@ app.post('/notes', (req, res) => {
   });
 });
 
-app.get('/notes/:id', (req, res) => {
+app.get('/api/notes/:id', (req, res) => {
   const { id } = req.params;
   const sql = 'SELECT * FROM notes WHERE id = ? LIMIT 1';
 
@@ -69,7 +69,7 @@ app.get('/notes/:id', (req, res) => {
   });
 });
 
-app.put('/notes/:id', (req, res) => {
+app.put('/api/notes/:id', (req, res) => {
   const { id } = req.params;
   const { title, content } = req.body;
   const sql = 'UPDATE notes SET title = ?, content = ? WHERE id = ?';
@@ -89,7 +89,7 @@ app.put('/notes/:id', (req, res) => {
   });
 });
 
-app.delete('/notes/:id', (req, res) => {
+app.delete('/api/notes/:id', (req, res) => {
   const { id } = req.params;
   const sql = 'DELETE FROM notes WHERE id = ?';
 
