@@ -13,10 +13,26 @@ database.serialize(() => {
     CREATE TABLE IF NOT EXISTS notes (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       title TEXT,
-      content TEXT);
+      content TEXT,
+      created_at datetime  NOT NULL  DEFAULT current_timestamp,
+      updated_at datetime  NOT NULL  DEFAULT current_timestamp);
   `;
 
   database.run(sqlNotes, [], (err) => {
+    if (err) {
+      throw err;
+    }
+  });
+
+  const updatedAtTrigger = `CREATE TRIGGER tg_notes_updated_at
+    AFTER UPDATE
+    ON notes FOR EACH ROW
+    BEGIN
+      UPDATE notes SET updated_at = current_timestamp
+        WHERE id = old.id;
+    END`;
+
+  database.run(updatedAtTrigger, [], (err) => {
     if (err) {
       throw err;
     }
