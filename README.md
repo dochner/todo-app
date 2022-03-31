@@ -1,6 +1,6 @@
 # Mytodo
 
-That's a to-do list tool builtin for studies purposes.
+That's a to-do list tool created for studies purposes.
 
 ----
 
